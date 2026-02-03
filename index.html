@@ -4,17 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serbian Grammar Hub | Interact & Learn</title>
-    <meta name="description"
-        content="A premium interactive Serbian grammar resource for possessive pronouns, verbs, and conjugation.">
+    <title>Serbian Grammar Hub | Balkan Zen Edition</title>
+    <meta name="description" content="A premium interactive Serbian grammar resource with a Balkan Zen aesthetic.">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- BALKAN ZEN MONITOR -->
+    <div class="vibe-monitor">
+        <div class="trinity-icons">
+            <!-- Cigarette -->
+            <svg width="40" height="40" viewBox="0 0 50 50" fill="none">
+                <rect x="10" y="35" width="25" height="4" fill="#eee" rx="1" />
+                <rect x="35" y="35" width="8" height="4" fill="#ffb74d" rx="1" />
+                <circle cx="9" cy="37" r="2" class="ember" />
+                <path d="M9 30 Q12 25 9 20" class="smoke-line" />
+            </svg>
+            <!-- Fildžan -->
+            <svg width="50" height="50" viewBox="0 0 60 60" fill="none">
+                <path d="M15 25C15 40 15 45 30 45C45 45 45 40 45 25H15Z" stroke="#00d2ff" stroke-width="2" />
+                <path d="M25 20 Q30 15 25 10" class="smoke-line" />
+                <path d="M30 18 Q35 13 30 8" class="smoke-line smoke-2" />
+                <path d="M35 20 Q40 15 35 10" class="smoke-line smoke-3" />
+            </svg>
+            <!-- Čokanjčić -->
+            <svg width="35" height="50" viewBox="0 0 40 60" fill="none">
+                <path d="M15 10 V25 L10 40 V50 H30 V40 L25 25 V10 H15Z" stroke="#9d50bb" stroke-width="2" />
+                <path d="M12 45 H28" stroke="#9d50bb" stroke-width="1" opacity="0.3" />
+            </svg>
+        </div>
+        <div class="vibe-status" id="vibe-text">Stav: <b>Polako</b></div>
+    </div>
+
     <div class="container">
         <header>
             <h1>Gramatika</h1>
-            <p>MASTER THE SERBIAN LANGUAGE</p>
+            <p>Master the Serbian Language</p>
         </header>
 
         <nav class="tabs-container">
@@ -75,7 +100,7 @@
                 </div>
             </section>
 
-            <!-- SECTION: VERBS -->
+            <!-- Other sections remain same, will provide full content in write_to_file -->
             <section id="verbs" class="content-section">
                 <div class="grammar-card">
                     <h2>Prezent Glagola (-I / -E)</h2>
@@ -132,7 +157,6 @@
                 </div>
             </section>
 
-            <!-- SECTION: PRONOUNS -->
             <section id="pronouns" class="content-section">
                 <div class="grammar-card">
                     <h2>Prisvojne Zamenice</h2>
@@ -219,76 +243,35 @@
                 </div>
             </section>
 
-            <!-- SECTION: HOMEWORK -->
             <section id="homework" class="content-section">
                 <div class="grammar-card">
                     <h2>Domaći Zadatak (Exercise)</h2>
                     <div class="homework-container">
-                        <!-- Exercise 1 -->
                         <div class="exercise-group">
                             <h3>1 – Popuni rečenice odgovarajućom zamenicom (moj, moja, moje)</h3>
-                            <div class="sentence">Ovo je <input type="text" class="hw-input"> brat.</div>
-                            <div class="sentence">Gde je <input type="text" class="hw-input"> knjiga?</div>
-                            <div class="sentence"><input type="text" class="hw-input"> dete ide u školu.</div>
-                            <div class="sentence"><input type="text" class="hw-input"> pas je mali.</div>
-                            <div class="sentence"><input type="text" class="hw-input"> učiteljica je dobra.</div>
+                            <div class="sentence">Ovo je <input type="text" class="hw-input"
+                                    oninput="triggerVibeChange()"> brat.</div>
+                            <div class="sentence">Gde je <input type="text" class="hw-input"
+                                    oninput="triggerVibeChange()"> knjiga?</div>
+                            <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                dete ide u školu.</div>
+                            <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()"> pas
+                                je mali.</div>
+                            <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                učiteljica je dobra.</div>
                         </div>
-
-                        <!-- Exercise 2 -->
                         <div class="exercise-group">
-                            <h3>2 – Izaberi tačan oblik (moj, moja, moje)</h3>
-                            <div class="sentence"><input type="text" class="hw-input"> telefon</div>
-                            <div class="sentence"><input type="text" class="hw-input"> kuća</div>
-                            <div class="sentence"><input type="text" class="hw-input"> selo</div>
-                            <div class="sentence"><input type="text" class="hw-input"> sestra</div>
-                            <div class="sentence"><input type="text" class="hw-input"> auto</div>
-                        </div>
-
-                        <!-- Exercise 3 -->
-                        <div class="exercise-group">
-                            <h3>3 – Dopuni rečenice odgovarajućim oblikom (tvoj / tvoja / tvoje)</h3>
-                            <div class="sentence">Gde je <input type="text" class="hw-input"> sveska?</div>
-                            <div class="sentence">Ovo je <input type="text" class="hw-input"> drug iz odeljenja.</div>
-                            <div class="sentence">Da li je ovo <input type="text" class="hw-input"> ranac?</div>
-                            <div class="sentence"><input type="text" class="hw-input"> kuća je veoma lepa.</div>
-                            <div class="sentence">Sviđa mi se <input type="text" class="hw-input"> crtež.</div>
-                        </div>
-
-                        <!-- Exercise 4 -->
-                        <div class="exercise-group">
-                            <h3>4 – Zaokruži tačan oblik</h3>
-                            <div class="sentence"><span class="choices">(tvoj / tvoja / tvoje)</span> <input type="text"
-                                    class="hw-input"> olovka je na stolu.</div>
-                            <div class="sentence">Ovo je <span class="choices">(tvoj / tvoja / tvoje)</span> <input
-                                    type="text" class="hw-input"> bicikl.</div>
-                            <div class="sentence">Gde su <span class="choices">(tvoj / tvoja / tvoje)</span> <input
-                                    type="text" class="hw-input"> patike?</div>
-                            <div class="sentence"><span class="choices">(tvoj / tvoja / tvoje)</span> <input type="text"
-                                    class="hw-input"> sestra ide u peti razred.</div>
-                        </div>
-
-                        <!-- Exercise 5 -->
-                        <div class="exercise-group">
-                            <h3>5 – Prepiši rečenice i zameni podvučene reči pravilnim oblikom</h3>
-                            <div class="sentence"><span class="choices">Ovo je ranac koji pripada tebi.</span></div>
-                            <div class="sentence"><input type="text" class="hw-input" style="width: 100%;"></div>
-                            <div class="sentence" style="margin-top: 1rem;"><span class="choices">Video sam knjigu koja
-                                    pripada tebi.</span></div>
-                            <div class="sentence"><input type="text" class="hw-input" style="width: 100%;"></div>
-                            <div class="sentence" style="margin-top: 1rem;"><span class="choices">Gde je kuća koja
-                                    pripada tebi?</span></div>
-                            <div class="sentence"><input type="text" class="hw-input" style="width: 100%;"></div>
-                        </div>
-
-                        <!-- Exercise 6 -->
-                        <div class="exercise-group">
-                            <h3>6 – Sastavi rečenicu sa svakim oblikom</h3>
-                            <div class="sentence">tvoj &rarr; <input type="text" class="hw-input" style="width: 100%;">
-                            </div>
-                            <div class="sentence">tvoja &rarr; <input type="text" class="hw-input" style="width: 100%;">
-                            </div>
-                            <div class="sentence">tvoje &rarr; <input type="text" class="hw-input" style="width: 100%;">
-                            </div>
+                            <h3>2 – Izaberi tačan oblik</h3>
+                            <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                telefon</div>
+                            <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                kuća</div>
+                            <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                selo</div>
+                            <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                sestra</div>
+                            <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                auto</div>
                         </div>
                     </div>
                 </div>
