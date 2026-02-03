@@ -11,9 +11,7 @@
 
     /* Dedicated Area Colors */
     --singular-bg: rgba(0, 210, 255, 0.08);
-    /* Sophisticated Dark Cyan */
     --plural-bg: rgba(157, 80, 187, 0.12);
-    /* Elegant Deep Purple */
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
@@ -216,6 +214,119 @@ tr:hover td {
 .option-btn:hover {
     background: var(--primary-accent);
     border-color: var(--primary-accent);
+}
+
+/* Homework Interactive Styles */
+.homework-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: left;
+}
+
+.exercise-group {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: var(--transition);
+}
+
+.exercise-group h3 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-accent);
+    font-size: 1.2rem;
+}
+
+.sentence {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.hw-input {
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    border-bottom: 2px solid var(--border-color);
+    color: white;
+    padding: 2px 8px;
+    font-size: 1.1rem;
+    width: 120px;
+    outline: none;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.hw-input:focus {
+    border-color: var(--primary-accent);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.hw-input.correct {
+    border-color: #00c853 !important;
+    color: #00c853;
+}
+
+.hw-input.incorrect {
+    border-color: #ff5252 !important;
+    color: #ff5252;
+}
+
+.check-btn {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-dim);
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.check-btn:hover {
+    color: white;
+    border-color: var(--primary-accent);
+    background: rgba(0, 210, 255, 0.1);
+}
+
+.select-container {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.select-chip {
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.select-chip:hover {
+    border-color: var(--primary-accent);
+}
+
+.select-chip.selected {
+    background: var(--primary-accent);
+    color: white;
+    border-color: var(--primary-accent);
+}
+
+.select-chip.correct {
+    background: #00c853;
+    border-color: #00c853;
+}
+
+.select-chip.incorrect {
+    background: #ff5252;
+    border-color: #ff5252;
 }
 
 /* Animations */

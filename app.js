@@ -35,16 +35,58 @@ function switchTab(tabId) {
     document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
 
     document.getElementById(tabId).classList.add('active');
-    document.querySelector(`[onclick="switchTab('${tabId}')"]`).classList.add('active');
+    const tabBtn = document.querySelector(`[onclick="switchTab('${tabId}')"]`);
+    if (tabBtn) tabBtn.classList.add('active');
+}
+
+// Homework Logic
+function checkInputs(btn) {
+    const group = btn.parentElement;
+    const inputs = group.querySelectorAll('.hw-input');
+
+    inputs.forEach(input => {
+        const correctVal = input.getAttribute('data-answer');
+        if (!correctVal) return;
+
+        const userVal = input.value.trim().toLowerCase();
+        if (userVal === correctVal.toLowerCase()) {
+            input.classList.remove('incorrect');
+            input.classList.add('correct');
+        } else {
+            input.classList.remove('correct');
+            input.classList.add('incorrect');
+        }
+    });
+}
+
+function selectChip(chip) {
+    const container = chip.parentElement;
+    container.querySelectorAll('.select-chip').forEach(c => c.classList.remove('selected', 'correct', 'incorrect'));
+    chip.classList.add('selected');
+}
+
+function checkSelections(btn) {
+    const group = btn.parentElement;
+    const containers = group.querySelectorAll('.select-container');
+
+    containers.forEach(container => {
+        const correctVal = container.getAttribute('data-answer');
+        const selected = container.querySelector('.select-chip.selected');
+
+        if (selected) {
+            if (selected.innerText === correctVal) {
+                selected.classList.add('correct');
+            } else {
+                selected.classList.add('incorrect');
+            }
+        }
+    });
 }
 
 // Simple Quiz Logic
-let currentScore = 0;
-
 function checkAnswer(btn, isCorrect) {
     if (isCorrect) {
         btn.style.background = "#00c853";
-        currentScore++;
     } else {
         btn.style.background = "#ff5252";
     }
@@ -64,12 +106,16 @@ function generateNewQuestion() {
     const randomIdx = Math.floor(Math.random() * questions.length);
     const q = questions[randomIdx];
 
-    document.querySelector('.quiz-question').innerText = q.q;
-    const optionsHtml = q.options.sort(() => Math.random() - 0.5).map(opt =>
-        `<button class="option-btn" onclick="checkAnswer(this, '${opt}' === '${q.a}')">${opt}</button>`
-    ).join('');
+    const qEl = document.querySelector('.quiz-question');
+    const optsEl = document.querySelector('.quiz-options');
 
-    document.querySelector('.quiz-options').innerHTML = optionsHtml;
+    if (qEl && optsEl) {
+        qEl.innerText = q.q;
+        const optionsHtml = q.options.sort(() => Math.random() - 0.5).map(opt =>
+            `<button class="option-btn" onclick="checkAnswer(this, '${opt}' === '${q.a}')">${opt}</button>`
+        ).join('');
+        optsEl.innerHTML = optionsHtml;
+    }
 }
 
 // Initial load
