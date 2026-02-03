@@ -14,26 +14,35 @@
     <div class="vibe-monitor">
         <div class="trinity-icons">
             <!-- Cigarette -->
-            <svg width="40" height="40" viewBox="0 0 50 50" fill="none">
-                <rect x="10" y="35" width="25" height="4" fill="#eee" rx="1" />
-                <rect x="35" y="35" width="8" height="4" fill="#ffb74d" rx="1" />
-                <circle cx="9" cy="37" r="2" class="ember" />
-                <path d="M9 30 Q12 25 9 20" class="smoke-line" />
+            <svg width="45" height="40" viewBox="0 0 50 50" fill="none">
+                <rect x="5" y="34" width="30" height="5" fill="#eee" rx="1.5" />
+                <rect x="35" y="34" width="10" height="5" fill="#ffb74d" rx="1.5" />
+                <circle cx="4" cy="36.5" r="2.5" class="ember" />
+                <path d="M4 28 Q8 20 4 12" class="smoke-line" />
+                <path d="M7 25 Q11 17 7 9" class="smoke-line smoke-2" style="opacity: 0.3;" />
             </svg>
             <!-- Fildžan -->
-            <svg width="50" height="50" viewBox="0 0 60 60" fill="none">
-                <path d="M15 25C15 40 15 45 30 45C45 45 45 40 45 25H15Z" stroke="#00d2ff" stroke-width="2" />
-                <path d="M25 20 Q30 15 25 10" class="smoke-line" />
-                <path d="M30 18 Q35 13 30 8" class="smoke-line smoke-2" />
-                <path d="M35 20 Q40 15 35 10" class="smoke-line smoke-3" />
+            <svg width="55" height="50" viewBox="0 0 60 60" fill="none">
+                <path d="M15 22C15 38 18 48 30 48C42 48 45 38 45 22" stroke="#00d2ff" stroke-width="2"
+                    stroke-linecap="round" />
+                <path d="M12 22H48" stroke="#00d2ff" stroke-width="2" stroke-linecap="round" />
+                <path d="M25 15 Q30 8 25 2" class="smoke-line" />
+                <path d="M30 13 Q35 6 30 0" class="smoke-line smoke-2" />
+                <path d="M35 15 Q40 8 35 2" class="smoke-line smoke-3" />
             </svg>
             <!-- Čokanjčić -->
-            <svg width="35" height="50" viewBox="0 0 40 60" fill="none">
-                <path d="M15 10 V25 L10 40 V50 H30 V40 L25 25 V10 H15Z" stroke="#9d50bb" stroke-width="2" />
-                <path d="M12 45 H28" stroke="#9d50bb" stroke-width="1" opacity="0.3" />
+            <svg width="35" height="55" viewBox="0 0 40 60" fill="none">
+                <path
+                    d="M16 8 C16 8 16 20 16 25 C16 30 8 32 8 45 C8 55 12 55 20 55 C28 55 32 55 32 45 C32 32 24 30 24 25 C24 20 24 8 24 8"
+                    stroke="#9d50bb" stroke-width="2" stroke-linejoin="round" />
+                <path d="M16 12 H24" stroke="#9d50bb" stroke-width="1.5" opacity="0.6" />
+                <path d="M11 48 Q20 45 29 48" stroke="#9d50bb" stroke-width="1" opacity="0.4" />
             </svg>
         </div>
-        <div class="vibe-status" id="vibe-text">Stav: <b>Polako</b></div>
+        <div class="vibe-status" id="vibe-text">
+            <div class="status-dot"></div>
+            <span>Stav: <b>Polako</b></span>
+        </div>
     </div>
 
     <div class="container">

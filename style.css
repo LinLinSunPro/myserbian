@@ -63,38 +63,70 @@ header p {
     opacity: 0.6;
 }
 
-/* Balkan Zen Monitor (Fixed Top-Right) */
+/* Balkan Zen Monitor (Premium Widget) */
 .vibe-monitor {
     position: fixed;
-    top: 6rem;
-    right: 6rem;
+    top: 4rem;
+    right: 4rem;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 1rem;
+    gap: 1.2rem;
     z-index: 1000;
     pointer-events: none;
-    transform: scale(1.4);
+    padding: 1.5rem 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
     transform-origin: top right;
+    animation: fadeInDown 1s ease-out;
 }
 
 .trinity-icons {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
     align-items: flex-end;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .vibe-status {
-    font-size: 0.75rem;
-    letter-spacing: 0.15rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.2rem;
     color: var(--text-dim);
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
     transition: opacity 1.5s ease-in-out;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--primary-accent);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--primary-accent);
+    animation: blink-soft 3s infinite ease-in-out;
+}
+
+@keyframes blink-soft {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
 }
 
 .vibe-status b {
     color: var(--primary-accent);
+    font-weight: 700;
 }
 
 /* Steam/Smoke Animation */
