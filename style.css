@@ -24,7 +24,7 @@ body {
     color: var(--text-main);
     min-height: 100vh;
     overflow-x: hidden;
-    background-image: 
+    background-image:
         radial-gradient(circle at 20% 20%, rgba(0, 210, 255, 0.05) 0%, transparent 40%),
         radial-gradient(circle at 80% 80%, rgba(157, 80, 187, 0.05) 0%, transparent 40%);
 }
@@ -155,7 +155,7 @@ tr:hover td {
 .quiz-card {
     max-width: 600px;
     margin: 2rem auto;
-    background: linear-gradient(rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+    background: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
     border: 1px dashed var(--border-color);
     padding: 3rem;
     border-radius: 30px;
@@ -187,19 +187,83 @@ tr:hover td {
     border-color: var(--primary-accent);
 }
 
+/* Singular/Plural Separation */
+.singular-row td {
+    background: rgba(0, 210, 255, 0.03);
+}
+
+.plural-row td {
+    background: rgba(157, 80, 187, 0.03);
+}
+
+.plural-row-start {
+    border-top: 2px solid var(--border-color);
+}
+
+.col-singular {
+    color: var(--primary-accent);
+    font-weight: 500;
+}
+
+.col-plural {
+    color: var(--secondary-accent);
+    font-weight: 500;
+}
+
+.section-label {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.label-singular {
+    background: rgba(0, 210, 255, 0.1);
+    color: var(--primary-accent);
+}
+
+.label-plural {
+    background: rgba(157, 80, 187, 0.1);
+    color: var(--secondary-accent);
+}
+
 /* Animations */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 768px) {
-    header h1 { font-size: 2.5rem; }
-    .grammar-card { padding: 1.5rem; }
-    .quiz-options { grid-template-columns: 1fr; }
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .grammar-card {
+        padding: 1.5rem;
+    }
+
+    .quiz-options {
+        grid-template-columns: 1fr;
+    }
 }
