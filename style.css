@@ -186,24 +186,29 @@ header p {
     color: white;
 }
 
-/* Content Area */
+/* Card-less Content Layout */
 .content-section {
     display: none;
-    animation: fadeIn 0.5s ease-out;
+    animation: fadeIn 0.8s ease-out;
+    padding: 0 1rem;
 }
 
-.content-section.active {
-    display: block;
-}
-
-/* Cards & Tables */
 .grammar-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 24px;
-    padding: 2.5rem;
-    backdrop-filter: var(--glass-blur);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    backdrop-filter: none;
+    box-shadow: none;
+}
+
+h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    letter-spacing: -0.02em;
+    color: var(--text-main);
+    text-align: center;
 }
 
 .table-wrapper {
@@ -213,21 +218,31 @@ header p {
 
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0 0.5rem;
     text-align: left;
 }
 
 th {
     color: var(--primary-accent);
-    padding: 1rem;
-    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem 1rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.03);
     text-transform: uppercase;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.2rem;
+    opacity: 0.5;
 }
 
 td {
-    padding: 1.2rem 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.5rem 1rem;
+    background: rgba(255, 255, 255, 0.015);
+    border-bottom: 1px solid transparent;
+    transition: var(--transition);
+}
+
+tr:hover td {
+    background: rgba(255, 255, 255, 0.03);
+    color: white;
 }
 
 .ending {
