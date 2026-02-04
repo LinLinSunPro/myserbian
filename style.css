@@ -62,14 +62,16 @@ header.meta-header {
 }
 
 .zen-icons {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 1.5rem;
 }
 
 .icon {
-    width: 45px;
-    height: 45px;
+    width: 45px !important;
+    height: 45px !important;
+    flex-shrink: 0;
     opacity: 0.8;
 }
 
