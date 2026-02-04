@@ -60,7 +60,13 @@ header.meta-header {
     display: flex !important;
     justify-content: flex-start !important;
     align-items: center !important;
-    gap: 2rem;
+}
+
+.zen-icons-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
 }
 
 .zen-icons {
@@ -100,6 +106,41 @@ header.meta-header {
 
 .vibe-status b {
     color: var(--primary-accent);
+}
+
+.info-reveal-box {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    letter-spacing: 0.02rem;
+    line-height: 1.6;
+    max-width: 400px;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    min-height: 3.5rem;
+    /* Reserve space to prevent layout jump */
+}
+
+.info-reveal-box.active {
+    opacity: 0.8;
+    transform: translateY(0);
+}
+
+.icon,
+.vibe-status {
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.icon:hover {
+    opacity: 1;
+    filter: drop-shadow(0 0 8px var(--primary-accent));
+}
+
+.vibe-status:hover {
+    color: var(--text-main);
 }
 
 /* Steam/Smoke Animation */
@@ -522,6 +563,10 @@ tr:hover td {
 
     .header-right {
         justify-content: center !important;
+    }
+
+    .zen-icons-row {
+        align-items: center;
     }
 
     .zen-icons {
