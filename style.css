@@ -30,8 +30,8 @@ body {
 }
 
 header.meta-header {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     margin: 4rem 0 6rem 0;
     width: 100%;
@@ -58,6 +58,7 @@ header.meta-header {
 
 .header-right {
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
