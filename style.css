@@ -30,9 +30,9 @@ body {
 }
 
 header.meta-header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    align-items: center !important;
     margin: 4rem 0 6rem 0;
     width: 100%;
 }
@@ -57,9 +57,9 @@ header.meta-header {
 }
 
 .header-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
 
 .zen-icons {
@@ -91,8 +91,9 @@ header.meta-header {
     text-transform: uppercase;
     font-weight: 400;
     transition: opacity 1s ease-in-out;
-    width: 200px;
-    /* Fixed width to prevent layout jumping */
+    width: auto;
+    min-width: 160px;
+    /* Removed large fixed width to ensure perfect centering */
     text-align: left;
 }
 
