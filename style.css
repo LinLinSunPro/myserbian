@@ -160,24 +160,22 @@ header.meta-header {
 
 /* Minimalist Category Tabs */
 .tabs-container {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
+    display: flex !important;
     gap: 0;
     margin: 4rem 0;
     width: 100%;
 }
 
 .tab-item {
-    padding: 2rem;
+    flex: 1;
+    padding: 3rem 1rem;
     color: var(--text-dim);
     cursor: pointer;
     transition: var(--transition);
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     text-align: center;
     position: relative;
-    z-index: 1;
-    overflow: hidden;
 }
 
 .tab-item:hover {
@@ -188,37 +186,14 @@ header.meta-header {
     color: white;
 }
 
-/* Passive Glow effect behind text */
-.tab-item::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 250px;
-    height: 150px;
-    background: radial-gradient(circle, var(--glow-color, rgba(0, 210, 255, 0.4)) 0%, transparent 70%);
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.6s ease;
-    filter: blur(40px);
+/* Category Specific Background Colors (Diffuse Glows) */
+.tab-item:nth-child(1).active {
+    background: radial-gradient(circle, rgba(0, 210, 255, 0.15) 0%, transparent 70%);
 }
 
-.tab-item.active::before {
-    opacity: 1;
+.tab-item:nth-child(2).active {
+    background: radial-gradient(circle, rgba(157, 80, 187, 0.15) 0%, transparent 70%);
 }
-
-/* Specific Colors for Glows */
-.tab-item:nth-child(1) {
-    --glow-color: rgba(0, 210, 255, 0.25);
-}
-
-/* Cyan Glow for Gramatika */
-.tab-item:nth-child(2) {
-    --glow-color: rgba(157, 80, 187, 0.25);
-}
-
-/* Purple Glow for Domaći */
 
 /* Display Logic */
 .category-section {
