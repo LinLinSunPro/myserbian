@@ -31,7 +31,7 @@ body {
 
 header.meta-header {
     display: grid !important;
-    grid-template-columns: 1fr auto !important;
+    grid-template-columns: 1fr 1fr !important;
     align-items: center !important;
     margin: 4rem 0 6rem 0;
     width: 100%;
