@@ -81,6 +81,7 @@ header.meta-header {
     color: var(--text-dim);
     text-transform: uppercase;
     font-weight: 400;
+    transition: opacity 1.5s ease-in-out;
 }
 
 .vibe-status b {
