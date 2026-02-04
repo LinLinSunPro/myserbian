@@ -10,36 +10,32 @@
 </head>
 
 <body>
-    <!-- BALKAN ZEN MONITOR -->
-    <div class="vibe-monitor">
-        <div class="trinity-icons">
-            <!-- Cigarette (Neon Theme) -->
-            <svg width="40" height="40" viewBox="0 0 50 50" fill="none">
-                <rect x="10" y="35" width="25" height="4" fill="var(--primary-accent)" rx="1" />
-                <rect x="35" y="35" width="8" height="4" fill="var(--secondary-accent)" rx="1" />
-                <circle cx="9" cy="37" r="2" class="ember" />
-                <path d="M9 30 Q12 25 9 20" class="smoke-line" />
-            </svg>
-            <!-- Fildžan -->
-            <svg width="50" height="50" viewBox="0 0 60 60" fill="none">
-                <path d="M15 25C15 40 15 45 30 45C45 45 45 40 45 25H15Z" stroke="#00d2ff" stroke-width="2" />
-                <path d="M25 20 Q30 15 25 10" class="smoke-line" />
-                <path d="M30 18 Q35 13 30 8" class="smoke-line smoke-2" />
-                <path d="M35 20 Q40 15 35 10" class="smoke-line smoke-3" />
-            </svg>
-            <!-- Čokanjčić (Pure Outline) -->
-            <svg width="35" height="50" viewBox="0 0 40 60" fill="none">
-                <path d="M15 10 L15 25 L10 40 L10 50 L30 50 L30 40 L25 25 L25 10 Z" stroke="var(--secondary-accent)"
-                    stroke-width="2" fill="none" />
-            </svg>
-        </div>
-        <div class="vibe-status" id="vibe-text">Stav: <b>Polako</b></div>
-    </div>
 
     <div class="container">
-        <header>
-            <h1>Gramatika</h1>
-            <p>Master the Serbian Language</p>
+        <header class="meta-header">
+            <div class="header-left">
+                <h1>Govorimo Srpski</h1>
+                <p class="subtitle">Umiruje Vibe, Jača Gramatiku</p>
+            </div>
+            <div class="header-right">
+                <div class="zen-icons">
+                    <!-- Fildžan (Coffee Cup) -->
+                    <svg class="icon fildzan" viewBox="0 0 50 50">
+                        <path d="M10 20 C10 35 15 40 25 40 C35 40 40 35 40 20 H10 Z" stroke="var(--primary-accent)"
+                            stroke-width="2" fill="none" />
+                        <path d="M40 25 Q45 25 45 30 Q45 35 40 35" stroke="var(--primary-accent)" stroke-width="2"
+                            fill="none" />
+                    </svg>
+                    <!-- Čokanjčić (Balkan Shot Glass) -->
+                    <svg class="icon cokanjcic" viewBox="0 0 40 60">
+                        <path d="M15 10 L15 25 Q10 25 10 40 L10 50 L30 50 L30 40 Q30 25 25 25 L25 10 Z"
+                            stroke="var(--secondary-accent)" stroke-width="2" fill="none" />
+                        <rect x="14" y="6" width="12" height="4" rx="1" stroke="var(--secondary-accent)"
+                            stroke-width="2" fill="none" />
+                    </svg>
+                    <div class="vibe-status">STAV: <b>POLAKO</b></div>
+                </div>
+            </div>
         </header>
 
         <nav class="tabs-container">
