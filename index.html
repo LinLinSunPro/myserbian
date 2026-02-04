@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serbian Grammar Hub | Balkan Zen Edition</title>
     <meta name="description" content="A premium interactive Serbian grammar resource with a Balkan Zen aesthetic.">
-    <link rel="stylesheet" href="style.css?v=3.5">
+    <link rel="stylesheet" href="style.css?v=3.6">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
@@ -42,17 +42,17 @@
         </header>
 
         <nav class="tabs-container">
-            <div class="tab-item active" onclick="switchCategory('grammar')">Gramatika</div>
-            <div class="tab-item" onclick="switchCategory('homework')">Domaći zadatak</div>
+            <div class="tab-item active" onclick="switchCategory('grammar', event)">Gramatika</div>
+            <div class="tab-item" onclick="switchCategory('homework', event)">Domaći zadatak</div>
         </nav>
 
         <main>
             <!-- CATEGORY: GRAMMAR -->
             <div id="grammar-cat" class="category-section active">
                 <div class="sub-tabs-container">
-                    <div class="sub-tab-item active" onclick="switchSubCategory('biti')">glagol biti</div>
-                    <div class="sub-tab-item" onclick="switchSubCategory('verbs')">prezent glagola</div>
-                    <div class="sub-tab-item" onclick="switchSubCategory('pronouns')">prisvojne zamenice</div>
+                    <div class="sub-tab-item active" onclick="switchSubCategory('biti', event)">glagol biti</div>
+                    <div class="sub-tab-item" onclick="switchSubCategory('verbs', event)">prezent glagola</div>
+                    <div class="sub-tab-item" onclick="switchSubCategory('pronouns', event)">prisvojne zamenice</div>
                 </div>
 
                 <section id="biti" class="content-section active">
@@ -248,7 +248,7 @@
             <!-- CATEGORY: HOMEWORK -->
             <div id="homework-cat" class="category-section">
                 <div class="sub-tabs-container">
-                    <div class="sub-tab-item active" onclick="switchSubCategory('hw-feb-4')">februar 4</div>
+                    <div class="sub-tab-item active" onclick="switchSubCategory('hw-feb-4', event)">februar 4</div>
                 </div>
 
                 <section id="hw-feb-4" class="content-section active">
@@ -359,7 +359,7 @@
         </main>
     </div>
 
-    <script src="app.js?v=3.2"></script>
+    <script src="app.js?v=3.6"></script>
 </body>
 
 </html>

@@ -1,12 +1,16 @@
 // SUPABASE CONFIGURATION
 const SUPABASE_URL = 'https://yheuccgkzaphqqmmxlrg.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InloZXVjY2dremFwaHFxbW14bHJnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzAxOTQ1ODgsImV4cCI6MjA4NTc3MDU4OH0.9o1L6f9XeJwrd4_cgnGZMfoQYuFePIEQL4-GjtctWs0';
-const supabase = typeof supabase !== 'undefined' ? supabase : (window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null);
+let supabaseClient = null;
+
+if (typeof window !== 'undefined' && window.supabase) {
+    supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+}
 
 async function saveHomework(fieldId, value) {
-    if (!supabase) return;
+    if (!supabaseClient) return;
 
-    const { error } = await supabase
+    const { error } = await supabaseClient
         .from('homework_submissions')
         .upsert({
             submission_id: 'serbian_zen_v1',
@@ -19,9 +23,9 @@ async function saveHomework(fieldId, value) {
 }
 
 async function loadHomework() {
-    if (!supabase) return;
+    if (!supabaseClient) return;
 
-    const { data, error } = await supabase
+    const { data, error } = await supabaseClient
         .from('homework_submissions')
         .select('field_id, content')
         .eq('submission_id', 'serbian_zen_v1');
@@ -41,7 +45,7 @@ async function loadHomework() {
     }
 }
 
-function switchCategory(catId) {
+function switchCategory(catId, event) {
     // Hide all category sections
     document.querySelectorAll('.category-section').forEach(cat => {
         cat.classList.remove('active');
@@ -67,7 +71,7 @@ function switchCategory(catId) {
     triggerVibeChange();
 }
 
-function switchSubCategory(subId) {
+function switchSubCategory(subId, event) {
     // Find the current active category container (either grammar or homework)
     const activeCat = event.currentTarget.closest('.category-section');
     if (!activeCat) return;
