@@ -299,6 +299,35 @@ h2 {
 .table-wrapper {
     overflow-x: auto;
     margin-top: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Ethereal Glows for Singular / Plural grouping */
+.table-wrapper::before,
+.table-wrapper::after {
+    content: '';
+    position: absolute;
+    left: 15%;
+    right: 15%;
+    height: 150px;
+    z-index: -1;
+    filter: blur(60px);
+    opacity: 0.15;
+    pointer-events: none;
+    transition: var(--transition);
+}
+
+.table-wrapper::before {
+    top: 10%;
+    /* Positioned behind singular rows */
+    background: radial-gradient(circle, #00d2ff 0%, transparent 70%);
+}
+
+.table-wrapper::after {
+    bottom: 5%;
+    /* Positioned behind plural rows */
+    background: radial-gradient(circle, #9d50bb 0%, transparent 70%);
 }
 
 table {
