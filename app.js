@@ -66,9 +66,6 @@ function switchCategory(catId, event) {
     if (event && event.currentTarget) {
         event.currentTarget.classList.add('active');
     }
-
-    // Trigger Vibe Change
-    triggerVibeChange();
 }
 
 function switchSubCategory(subId, event) {
@@ -94,9 +91,6 @@ function switchSubCategory(subId, event) {
 
     // Set active sub-tab
     event.currentTarget.classList.add('active');
-
-    // Trigger Vibe Change
-    triggerVibeChange();
 }
 
 // BALKAN ZEN MONITOR LOGIC
@@ -221,6 +215,11 @@ document.addEventListener('DOMContentLoaded', () => {
     loadHomework();
     setupZenInteractivity();
 
-    // Start Zen rotations
-    setInterval(triggerVibeChange, 5000); // 5s interval for smooth rotation
+    // Slogans only change when the user interacts with the page (Zen Law)
+    document.addEventListener('click', (e) => {
+        // Only trigger if we're not clicking the interactive reveal box or icons (which have their own logic)
+        if (!e.target.closest('.zen-icons-row')) {
+            triggerVibeChange();
+        }
+    });
 });
