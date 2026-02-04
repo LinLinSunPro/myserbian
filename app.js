@@ -23,14 +23,17 @@ function switchCategory(catId) {
 }
 
 function switchSubCategory(subId) {
-    // Hide all internal content sections in grammar
-    const grammarCat = document.getElementById('grammar-cat');
-    grammarCat.querySelectorAll('.content-section').forEach(section => {
+    // Find the current active category container (either grammar or homework)
+    const activeCat = event.currentTarget.closest('.category-section');
+    if (!activeCat) return;
+
+    // Hide all internal content sections within this category
+    activeCat.querySelectorAll('.content-section').forEach(section => {
         section.classList.remove('active');
     });
 
-    // Remove active from all sub-tab items
-    grammarCat.querySelectorAll('.sub-tab-item').forEach(item => {
+    // Remove active from all sub-tab items within this category
+    activeCat.querySelectorAll('.sub-tab-item').forEach(item => {
         item.classList.remove('active');
     });
 
