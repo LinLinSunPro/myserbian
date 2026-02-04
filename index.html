@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serbian Grammar Hub | Balkan Zen Edition</title>
     <meta name="description" content="A premium interactive Serbian grammar resource with a Balkan Zen aesthetic.">
-    <link rel="stylesheet" href="style.css?v=2.1">
+    <link rel="stylesheet" href="style.css?v=3.0">
 </head>
 
 <body>
@@ -48,9 +48,15 @@
         <main>
             <!-- CATEGORY: GRAMMAR -->
             <div id="grammar-cat" class="category-section active">
+                <div class="sub-tabs-container">
+                    <div class="sub-tab-item active" onclick="switchSubCategory('biti')">glagol biti</div>
+                    <div class="sub-tab-item" onclick="switchSubCategory('verbs')">prezent glagola</div>
+                    <div class="sub-tab-item" onclick="switchSubCategory('pronouns')">prisvojne zamenice</div>
+                </div>
+
                 <section id="biti" class="content-section active">
                     <div class="grammar-card">
-                        <h2>Glagol "BITI" (Present Tense)</h2>
+                        <h2>Glagol "BITI"</h2>
                         <div class="table-wrapper">
                             <table>
                                 <thead>
@@ -97,10 +103,10 @@
                     </div>
                 </section>
 
-                <!-- Other sections remain same, will provide full content in write_to_file -->
-                <section id="verbs" class="content-section active">
+                <!-- Verb Conjugation -->
+                <section id="verbs" class="content-section">
                     <div class="grammar-card">
-                        <h2>Prezent Glagola (-I / -E)</h2>
+                        <h2>Prezent Glagola</h2>
                         <div class="table-wrapper">
                             <table>
                                 <thead>
@@ -154,7 +160,7 @@
                     </div>
                 </section>
 
-                <section id="pronouns" class="content-section active">
+                <section id="pronouns" class="content-section">
                     <div class="grammar-card">
                         <h2>Prisvojne Zamenice</h2>
                         <div class="table-wrapper">
@@ -339,7 +345,7 @@
         </main>
     </div>
 
-    <script src="app.js"></script>
+    <script src="app.js?v=3.0"></script>
 </body>
 
 </html>

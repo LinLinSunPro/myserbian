@@ -22,6 +22,31 @@ function switchCategory(catId) {
     triggerVibeChange();
 }
 
+function switchSubCategory(subId) {
+    // Hide all internal content sections in grammar
+    const grammarCat = document.getElementById('grammar-cat');
+    grammarCat.querySelectorAll('.content-section').forEach(section => {
+        section.classList.remove('active');
+    });
+
+    // Remove active from all sub-tab items
+    grammarCat.querySelectorAll('.sub-tab-item').forEach(item => {
+        item.classList.remove('active');
+    });
+
+    // Show selected sub-section
+    const selected = document.getElementById(subId);
+    if (selected) {
+        selected.classList.add('active');
+    }
+
+    // Set active sub-tab
+    event.currentTarget.classList.add('active');
+
+    // Trigger Vibe Change
+    triggerVibeChange();
+}
+
 // BALKAN ZEN MONITOR LOGIC
 const vibePhrases = [
     "STAV: <b>POLAKO</b>",

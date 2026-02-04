@@ -222,7 +222,46 @@ header.meta-header {
 
 /* Purple */
 
-/* Display Logic */
+/* Sub-Tabs for Grammar sections */
+.sub-tabs-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    opacity: 0.8;
+}
+
+.sub-tab-item {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: lowercase;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.sub-tab-item:hover {
+    color: var(--text-main);
+}
+
+.sub-tab-item.active {
+    color: var(--primary-accent);
+}
+
+.sub-tab-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    right: 20%;
+    height: 1px;
+    background: var(--primary-accent);
+    opacity: 0.5;
+}
+
+/* Category Display Logic */
 .category-section {
     display: none;
     animation: fadeIn 0.8s ease forwards;
