@@ -21,7 +21,7 @@ A fundamental Balkan law that says everything can wait. If you are slow enoughâ€
 
 Draft: None / No draft.
 The legendary Balkan supernatural force believed to cause everything from back pain to sudden death.
-"Promaja: NEMA" means here you are safe and cozy.
+"Promaja: NEMA" means you are safe and cozy.
 
 ### Kafa: ÄŒeka Se
 
