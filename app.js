@@ -220,4 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupPersistence();
     loadHomework();
     setupZenInteractivity();
+
+    // Start Zen rotations
+    setInterval(triggerVibeChange, 5000); // 5s interval for smooth rotation
 });
