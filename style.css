@@ -212,12 +212,12 @@ header.meta-header {
 
 /* Category Specific Glow Colors */
 .tab-item:nth-child(1) {
-    --glow-color: rgba(0, 210, 255, 0.2);
+    --glow-color: rgba(0, 210, 255, 0.45);
 }
 
 /* Cyan */
 .tab-item:nth-child(2) {
-    --glow-color: rgba(157, 80, 187, 0.2);
+    --glow-color: rgba(157, 80, 187, 0.45);
 }
 
 /* Purple */
