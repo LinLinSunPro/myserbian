@@ -58,8 +58,9 @@ header.meta-header {
 
 .header-right {
     display: flex !important;
-    justify-content: center !important;
+    justify-content: flex-start !important;
     align-items: center !important;
+    gap: 2rem;
 }
 
 .zen-icons {
