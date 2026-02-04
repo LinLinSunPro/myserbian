@@ -62,17 +62,25 @@ header.meta-header {
 }
 
 .zen-icons {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     gap: 1.5rem;
 }
 
 .icon {
-    width: 45px !important;
-    height: 45px !important;
+    height: clamp(35px, 4vw, 45px);
+    width: auto;
     flex-shrink: 0;
     opacity: 0.8;
+}
+
+.fildzan {
+    aspect-ratio: 50 / 50;
+}
+
+.cokanjcic {
+    aspect-ratio: 40 / 60;
 }
 
 .vibe-status {
@@ -81,7 +89,10 @@ header.meta-header {
     color: var(--text-dim);
     text-transform: uppercase;
     font-weight: 400;
-    transition: opacity 1.5s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    width: 200px;
+    /* Fixed width to prevent layout jumping */
+    text-align: left;
 }
 
 .vibe-status b {

@@ -16,11 +16,10 @@ function switchTab(tabId) {
 
 // BALKAN ZEN MONITOR LOGIC
 const vibePhrases = [
-    "Stav: <b>Polako</b>",
-    "Promaja: <b>Nema</b>",
-    "Kafa: <b>Čeka Se</b>",
-    "Rakija: <b>Samo Malo</b>",
-    "Duvan: <b>Umiruje</b>"
+    "STAV: <b>POLAKO</b>",
+    "PROMAJA: <b>NEMA</b>",
+    "KAFA: <b>ČEKA SE</b>",
+    "RAKIJA: <b>SAMO MALO</b>"
 ];
 
 let currentVibeIndex = 0;
