@@ -45,31 +45,8 @@ async function loadHomework() {
     }
 }
 
-function switchCategory(catId, event) {
-    // Hide all category sections
-    document.querySelectorAll('.category-section').forEach(cat => {
-        cat.classList.remove('active');
-    });
-
-    // Remove active class from tab items
-    document.querySelectorAll('.tab-item').forEach(item => {
-        item.classList.remove('active');
-    });
-
-    // Show selected category
-    const selectedCat = document.getElementById(catId + '-cat');
-    if (selectedCat) {
-        selectedCat.classList.add('active');
-    }
-
-    // Add active class to clicked tab
-    if (event && event.currentTarget) {
-        event.currentTarget.classList.add('active');
-    }
-}
-
+// Sub-Category switching (Grammar sub-tabs / Homework sub-tabs)
 function switchSubCategory(subId, event) {
-    // Find the current active category container (either grammar or homework)
     const activeCat = event.currentTarget.closest('.category-section');
     if (!activeCat) return;
 
@@ -102,35 +79,28 @@ const vibePhrases = [
 ];
 
 let currentVibeIndex = 0;
-let isVibeTransitioning = false; // Zen Cooldown Flag
+let isVibeTransitioning = false;
 
 function triggerVibeChange() {
-    if (isVibeTransitioning) return; // Ignore if already moving (Polako logic)
+    if (isVibeTransitioning) return;
 
     const vibeText = document.getElementById('vibe-text');
     if (!vibeText) return;
 
     isVibeTransitioning = true;
-
-    // Smooth fade out
     vibeText.style.opacity = '0';
 
     setTimeout(() => {
-        // Change text
         currentVibeIndex = (currentVibeIndex + 1) % vibePhrases.length;
         vibeText.innerHTML = vibePhrases[currentVibeIndex];
-
-        // Smooth fade in
         vibeText.style.opacity = '1';
 
-        // Reset cooldown after the fade-in animation completes
         setTimeout(() => {
             isVibeTransitioning = false;
         }, 1100);
-    }, 1100); // Wait for the 1s fade-out to finish
+    }, 1100);
 }
 
-// Setup persistence listeners
 function setupPersistence() {
     const homeworkInputs = document.querySelectorAll('.hw-input');
     homeworkInputs.forEach(input => {
@@ -144,14 +114,13 @@ function setupPersistence() {
     });
 }
 
-// BALKAN ZEN REVEAL DATA
 const zenInfo = {
     'fildzan': "<b>Fildžan (feel-jahn)</b><br>A small, handleless ceramic cup for \"domaća kafa\" (Serbian/Turkish coffee).",
-    'cokanjcic': "<b>Čokanjčić (cho-kahn-cheech)</b><br>A small, pear-shaped glass with a narrow neck for serving Rakija - traditional fruit brandy.",
-    'POLAKO': "A fundamental Balkan law that says everything can wait. If you are slow enough—most problems will eventually solve themselves.",
-    'NEMA': "The legendary Balkan supernatural force believed to cause everything from back pain to sudden death. \"Promaja: NEMA\" means you are safe and cozy.",
-    'ČEKA SE': "A \"loading state\" of the Balkan soul. A daily ritual where all tasks are paused until the coffee is served. The socially acceptable reason to procrastinate.",
-    'SAMO MALO': "The fine line between the 'samo jednu' (just one) and overwhelming Balkan hospitality."
+    'cokanjcic': "<b>Čokanjčić (cho-kahn-cheech)</b><br>A small, pear-shaped glass with a narrow neck for serving Rakija.",
+    'POLAKO': "A fundamental Balkan law that says everything can wait.",
+    'NEMA': "The legendary Balkan supernatural force believed to cause back pain.",
+    'ČEKA SE': "A \"loading state\" of the Balkan soul. Tasks paused for coffee.",
+    'SAMO MALO': "The fine line between 'just one' and overwhelming hospitality."
 };
 
 function setupZenInteractivity() {
@@ -160,23 +129,21 @@ function setupZenInteractivity() {
     const cokanjcic = document.getElementById('icon-cokanjcic');
     const vibeBtn = document.getElementById('vibe-text');
 
-    const showInfo = (key) => {
-        if (!infoBox) return;
+    if (!infoBox) return;
 
-        // If clicking the same one twice, toggle it off
+    const showInfo = (key) => {
         if (infoBox.classList.contains('active') && infoBox.dataset.current === key) {
             infoBox.classList.remove('active');
             return;
         }
 
-        // Smooth swap: Fade out first if already active but with different key
         if (infoBox.classList.contains('active')) {
             infoBox.classList.remove('active');
             setTimeout(() => {
                 infoBox.innerHTML = zenInfo[key] || "";
                 infoBox.classList.add('active');
                 infoBox.dataset.current = key;
-            }, 410); // Wait for fade out
+            }, 410);
         } else {
             infoBox.innerHTML = zenInfo[key] || "";
             infoBox.classList.add('active');
@@ -189,16 +156,11 @@ function setupZenInteractivity() {
 
     if (vibeBtn) {
         vibeBtn.addEventListener('click', () => {
-            // Get current active slogan key (e.g. POLAKO, NEMA, etc)
             const bTag = vibeBtn.querySelector('b');
-            if (bTag) {
-                const key = bTag.innerText;
-                showInfo(key);
-            }
+            if (bTag) showInfo(bTag.innerText);
         });
     }
 
-    // Hide when clicking anywhere else
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.zen-icons-row')) {
             infoBox.classList.remove('active');
@@ -206,7 +168,22 @@ function setupZenInteractivity() {
     });
 }
 
-// Initial state
+function selectVocabTopic(topicId, cardElement) {
+    document.querySelectorAll('.vocab-compact-card').forEach(c => c.classList.remove('active'));
+    cardElement.classList.add('active');
+
+    const displayArea = document.getElementById('vocab-active-display');
+    const sourceContent = document.getElementById('vocab-content-' + topicId);
+
+    if (displayArea && sourceContent) {
+        displayArea.style.opacity = '0';
+        setTimeout(() => {
+            displayArea.innerHTML = sourceContent.innerHTML;
+            displayArea.style.opacity = '1';
+        }, 200);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const vibeText = document.getElementById('vibe-text');
     if (vibeText) vibeText.style.opacity = '1';
@@ -215,33 +192,9 @@ document.addEventListener('DOMContentLoaded', () => {
     loadHomework();
     setupZenInteractivity();
 
-    // Slogans only change when the user interacts with the page (Zen Law)
     document.addEventListener('click', (e) => {
-        // Only trigger if we're not clicking the interactive reveal box or icons (which have their own logic)
-        if (!e.target.closest('.zen-icons-row') && !e.target.closest('.vocab-card')) {
+        if (!e.target.closest('.zen-icons-row') && !e.target.closest('.vocab-card') && !e.target.closest('.dash-card')) {
             triggerVibeChange();
         }
     });
 });
-
-function selectVocabTopic(topicId, cardElement) {
-    // 1. Handle Visual Selection of Card
-    // Remove active class from all text-cards
-    document.querySelectorAll('.vocab-compact-card').forEach(c => c.classList.remove('active'));
-    // Add to clicked
-    cardElement.classList.add('active');
-
-    // 2. Handle Content Injection
-    const displayArea = document.getElementById('vocab-active-display');
-    const sourceContent = document.getElementById('vocab-content-' + topicId);
-
-    if (displayArea && sourceContent) {
-        // Fade out slightly before swapping (quick transition)
-        displayArea.style.opacity = '0';
-
-        setTimeout(() => {
-            displayArea.innerHTML = sourceContent.innerHTML;
-            displayArea.style.opacity = '1';
-        }, 200);
-    }
-}

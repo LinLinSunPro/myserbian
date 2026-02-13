@@ -262,17 +262,18 @@ header.meta-header {
     opacity: 1;
 }
 
-/* Category Specific Glow Colors */
+/* Category Specific Glow Colors - Restored to 3-tab logic */
 .tab-item:nth-child(1) {
-    --glow-color: rgba(0, 210, 255, 0.45);
+    --glow-color: rgba(0, 210, 255, 0.45); /* Gramatika - Cyan */
 }
 
-/* Cyan */
 .tab-item:nth-child(2) {
-    --glow-color: rgba(157, 80, 187, 0.45);
+    --glow-color: rgba(157, 80, 187, 0.45); /* Vokabular - Purple */
 }
 
-/* Purple */
+.tab-item:nth-child(3) {
+    --glow-color: rgba(255, 154, 158, 0.45); /* Domaći - Pink/Red */
+}
 
 /* Sub-Tabs for Grammar sections */
 .sub-tabs-container {

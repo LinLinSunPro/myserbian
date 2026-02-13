@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domaći zadatak | moj srpski</title>
+    <link rel="stylesheet" href="../style.css?v=5.2">
+    <link rel="stylesheet" href="../vocab-grid.css?v=1.2">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header class="meta-header">
+            <div class="header-left">
+                <a href="../" style="text-decoration: none;">
+                    <h1>moj srpski</h1>
+                </a>
+            </div>
+            <div class="header-right">
+                <div class="zen-icons-row">
+                    <div class="zen-icons">
+                        <svg class="icon fildzan" id="icon-fildzan" viewBox="0 0 50 50">
+                            <path d="M10 20 C10 35 15 40 25 40 C35 40 40 35 40 20 H10 Z" stroke="var(--primary-accent)"
+                                stroke-width="2" fill="none" />
+                            <path d="M20 15 Q25 10 20 5" class="smoke-line" />
+                            <path d="M25 13 Q30 8 25 3" class="smoke-line smoke-2" />
+                            <path d="M30 15 Q35 10 30 5" class="smoke-line smoke-3" />
+                        </svg>
+                        <svg class="icon cokanjcic" id="icon-cokanjcic" viewBox="0 0 40 60">
+                            <path d="M15 10 L15 25 Q10 25 10 40 L10 50 L30 50 L30 40 Q30 25 25 25 L25 10 Z"
+                                stroke="var(--secondary-accent)" stroke-width="2" fill="none" />
+                            <rect x="14" y="6" width="12" height="4" rx="1" stroke="var(--secondary-accent)"
+                                stroke-width="2" fill="none" />
+                        </svg>
+                        <div class="vibe-status" id="vibe-text">STAV: <b>POLAKO</b></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <nav class="tabs-container">
+            <a href="../grammar/" class="tab-item">Gramatika</a>
+            <a href="../vocabulary/" class="tab-item">Vokabular</a>
+            <a href="./" class="tab-item active">Domaći zadatak</a>
+        </nav>
+
+        <main>
+            <div class="category-section active">
+                <div class="sub-tabs-container">
+                    <div class="sub-tab-item active">februar 4</div>
+                </div>
+
+                <section class="content-section active">
+                    <div class="grammar-card">
+                        <div class="homework-container">
+                            <div class="exercise-group">
+                                <h3>1 – Popuni rečenice (moj, moja, moje)</h3>
+                                <div class="sentence">Ovo je <input type="text" id="hw-1-1" class="hw-input"> brat.
+                                </div>
+                                <div class="sentence">Gde je <input type="text" id="hw-1-2" class="hw-input"> knjiga?
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <footer class="zen-footer">
+                <div class="footer-content">moj srpski | 2026</div>
+            </footer>
+        </main>
+    </div>
+    <script src="../app.js?v=3.9"></script>
+</body>
+
+</html>
