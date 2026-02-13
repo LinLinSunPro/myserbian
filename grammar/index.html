@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gramatika | moj srpski</title>
-    <link rel="stylesheet" href="../style.css?v=5.1">
-    <link rel="stylesheet" href="../vocab-grid.css?v=1.1">
+    <link rel="stylesheet" href="../style.css?v=5.2">
+    <link rel="stylesheet" href="../vocab-grid.css?v=1.2">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
@@ -14,7 +14,9 @@
     <div class="container">
         <header class="meta-header">
             <div class="header-left">
-                <a href="../" style="text-decoration: none;"><h1>moj srpski</h1></a>
+                <a href="../" style="text-decoration: none;">
+                    <h1>moj srpski</h1>
+                </a>
             </div>
             <div class="header-right">
                 <div class="zen-icons-row">
@@ -40,10 +42,9 @@
         </header>
 
         <nav class="tabs-container">
-            <a href="../" class="tab-item">Početna</a>
             <a href="./" class="tab-item active">Gramatika</a>
             <a href="../vocabulary/" class="tab-item">Vokabular</a>
-            <a href="../homework/" class="tab-item">Domaći</a>
+            <a href="../homework/" class="tab-item">Domaći zadatak</a>
         </nav>
 
         <main>
@@ -54,6 +55,7 @@
                     <div class="sub-tab-item" onclick="switchSubCategory('pronouns', event)">prisvojne zamenice</div>
                 </div>
 
+                <!-- Biti Section -->
                 <section id="biti" class="content-section active">
                     <div class="grammar-card">
                         <div class="table-wrapper">
@@ -102,6 +104,7 @@
                     </div>
                 </section>
 
+                <!-- Verbs Section -->
                 <section id="verbs" class="content-section">
                     <div class="grammar-card">
                         <div class="table-wrapper">
@@ -157,6 +160,7 @@
                     </div>
                 </section>
 
+                <!-- Pronouns Section -->
                 <section id="pronouns" class="content-section">
                     <div class="grammar-card">
                         <div class="table-wrapper">
@@ -173,13 +177,69 @@
                                     </tr>
                                 </thead>
                                 <tbody id="pronoun-table">
-                                    <tr><td><b>JA</b></td><td class="col-singular">moj</td><td class="col-singular">moja</td><td class="col-singular">moje</td><td class="col-plural">moji</td><td class="col-plural">moje</td><td class="col-plural">moja</td></tr>
-                                    <tr><td><b>TI</b></td><td class="col-singular">tvoj</td><td class="col-singular">tvoja</td><td class="col-singular">tvoje</td><td class="col-plural">tvoji</td><td class="col-plural">tvoje</td><td class="col-plural">tvoja</td></tr>
-                                    <tr><td><b>ON</b></td><td class="col-singular">njegov</td><td class="col-singular">njegova</td><td class="col-singular">njegovo</td><td class="col-plural">njegovi</td><td class="col-plural">njegove</td><td class="col-plural">njegova</td></tr>
-                                    <tr><td><b>ONA</b></td><td class="col-singular">njen</td><td class="col-singular">njena</td><td class="col-singular">njeno</td><td class="col-plural">njeni</td><td class="col-plural">njene</td><td class="col-plural">njena</td></tr>
-                                    <tr><td><b>MI</b></td><td class="col-singular">naš</td><td class="col-singular">naša</td><td class="col-singular">naše</td><td class="col-plural">naši</td><td class="col-plural">naše</td><td class="col-plural">naša</td></tr>
-                                    <tr><td><b>VI</b></td><td class="col-singular">vaš</td><td class="col-singular">vaša</td><td class="col-singular">vaše</td><td class="col-plural">vaši</td><td class="col-plural">vaše</td><td class="col-plural">vaša</td></tr>
-                                    <tr><td><b>ONI</b></td><td class="col-singular">njihov</td><td class="col-singular">njihova</td><td class="col-singular">njihovo</td><td class="col-plural">njihovi</td><td class="col-plural">njihove</td><td class="col-plural">njihova</td></tr>
+                                    <tr>
+                                        <td><b>JA</b></td>
+                                        <td>moj</td>
+                                        <td>moja</td>
+                                        <td>moje</td>
+                                        <td>moji</td>
+                                        <td>moje</td>
+                                        <td>moja</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>TI</b></td>
+                                        <td>tvoj</td>
+                                        <td>tvoja</td>
+                                        <td>tvoje</td>
+                                        <td>tvoji</td>
+                                        <td>tvoje</td>
+                                        <td>tvoja</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>ON</b></td>
+                                        <td>njegov</td>
+                                        <td>njegova</td>
+                                        <td>njegovo</td>
+                                        <td>njegovi</td>
+                                        <td>njegove</td>
+                                        <td>njegova</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>ONA</b></td>
+                                        <td>njen</td>
+                                        <td>njena</td>
+                                        <td>njeno</td>
+                                        <td>njeni</td>
+                                        <td>njene</td>
+                                        <td>njena</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>MI</b></td>
+                                        <td>naš</td>
+                                        <td>naša</td>
+                                        <td>naše</td>
+                                        <td>naši</td>
+                                        <td>naše</td>
+                                        <td>naša</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>VI</b></td>
+                                        <td>vaš</td>
+                                        <td>vaša</td>
+                                        <td>vaše</td>
+                                        <td>vaši</td>
+                                        <td>vaše</td>
+                                        <td>vaša</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>ONI</b></td>
+                                        <td>njihov</td>
+                                        <td>njihova</td>
+                                        <td>njihovo</td>
+                                        <td>njihovi</td>
+                                        <td>njihove</td>
+                                        <td>njihova</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -188,7 +248,7 @@
             </div>
 
             <footer class="zen-footer">
-                <div class="footer-content">moj srpski | gramatika | 2026</div>
+                <div class="footer-content">moj srpski | 2026</div>
             </footer>
         </main>
     </div>
