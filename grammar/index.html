@@ -51,12 +51,15 @@
             <div id="grammar-cat" class="category-section active">
                 <div class="sub-tabs-container">
                     <div class="sub-tab-item active" onclick="switchSubCategory('biti', event)">glagol biti</div>
+                    <div class="sub-tab-item" onclick="switchSubCategory('negation', event)">negacija</div>
+                    <div class="sub-tab-item" onclick="switchSubCategory('questions', event)">pitanja</div>
                     <div class="sub-tab-item" onclick="switchSubCategory('verbs', event)">prezent glagola</div>
                     <div class="sub-tab-item" onclick="switchSubCategory('pronouns', event)">prisvojne zamenice</div>
                     <div class="sub-tab-item" onclick="switchSubCategory('gender', event)">rod imenica</div>
                     <div class="sub-tab-item" onclick="switchSubCategory('plural', event)">množina</div>
                 </div>
 
+                <!-- Glagol Biti -->
                 <section id="biti" class="content-section active">
                     <div class="grammar-card">
                         <div class="table-wrapper">
@@ -105,6 +108,87 @@
                     </div>
                 </section>
 
+                <!-- Negacija -->
+                <section id="negation" class="content-section">
+                    <div class="grammar-card">
+                        <div class="table-wrapper">
+                            <style>
+                                .rule-box {
+                                    padding: 2rem;
+                                    color: var(--text-main);
+                                    line-height: 1.8;
+                                }
+
+                                .rule-box b {
+                                    color: var(--secondary-accent);
+                                }
+
+                                .example-list {
+                                    margin-top: 1rem;
+                                    display: grid;
+                                    grid-template-columns: 1fr 1fr;
+                                    gap: 1rem;
+                                }
+
+                                .example-item {
+                                    background: rgba(255, 255, 255, 0.02);
+                                    padding: 1rem;
+                                    border-radius: 8px;
+                                    border: 1px solid rgba(255, 255, 255, 0.05);
+                                }
+
+                                .example-bad {
+                                    font-size: 0.9rem;
+                                    opacity: 0.6;
+                                }
+                            </style>
+                            <div class="rule-box">
+                                <h3>Pravilo (Rule)</h3>
+                                <p>For most verbs (except 'biti'), we use <b>NE</b> directly before the verb.</p>
+                                <div class="example-list">
+                                    <div class="example-item">
+                                        <span class="example-bad">Ja zovem se ne Čarli.</span><br>
+                                        <span>Ja se <b>ne zovem</b> Čarli.</span>
+                                    </div>
+                                    <div class="example-item">
+                                        <span class="example-bad">Ja govorim ne srpski.</span><br>
+                                        <span>Ja <b>ne govorim</b> srpski.</span>
+                                    </div>
+                                    <div class="example-item">
+                                        <span>Milica je...</span><br>
+                                        <span>Milica <b>nije</b> Francuskinja.</span>
+                                    </div>
+                                    <div class="example-item">
+                                        <span>Oni su...</span><br>
+                                        <span>Oni <b>nisu</b> ovde.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Pitanja -->
+                <section id="questions" class="content-section">
+                    <div class="grammar-card">
+                        <div class="table-wrapper">
+                            <div class="rule-box">
+                                <h3>Upitne reči (Question Words)</h3>
+                                <div class="example-list">
+                                    <div class="example-item"><b>KO?</b> (Who)<br>Ko je to?</div>
+                                    <div class="example-item"><b>ŠTA?</b> (What)<br>Šta je to?</div>
+                                    <div class="example-item"><b>GDE?</b> (Where)<br>Gde živiš?</div>
+                                    <div class="example-item"><b>DA LI?</b> (Yes/No Question Particle)<br>Da li ste vi
+                                        Kinez?</div>
+                                    <div class="example-item"><b>ODAKLE?</b> (From where)<br>Odakle si?</div>
+                                    <div class="example-item"><b>KAKO?</b> (How)<br>Kako se zovete?</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Prezent -->
                 <section id="verbs" class="content-section">
                     <div class="grammar-card">
                         <div class="table-wrapper">
@@ -160,6 +244,7 @@
                     </div>
                 </section>
 
+                <!-- Pronouns -->
                 <section id="pronouns" class="content-section">
                     <div class="grammar-card">
                         <div class="table-wrapper">
@@ -245,6 +330,7 @@
                     </div>
                 </section>
 
+                <!-- Gender -->
                 <section id="gender" class="content-section">
                     <div class="grammar-card">
                         <div class="table-wrapper">
@@ -278,6 +364,7 @@
                     </div>
                 </section>
 
+                <!-- Plural -->
                 <section id="plural" class="content-section">
                     <div class="grammar-card">
                         <div class="table-wrapper">
@@ -310,7 +397,6 @@
                         </div>
                     </div>
                 </section>
-
             </div>
             <footer class="zen-footer">
                 <div class="footer-content">moj srpski | 2026</div>
