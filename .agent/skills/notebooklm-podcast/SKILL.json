@@ -1,0 +1,29 @@
+[
+    {
+        "name": "generate_podcast",
+        "description": "Generate a NotebookLM Audio Overview (Podcast) from a local directory.",
+        "parameters": {
+            "properties": {
+                "sourceDir": {
+                    "type": "string",
+                    "description": "Local directory containing source files (e.g., e:\\Antigravity\\Serbian)"
+                },
+                "destDir": {
+                    "type": "string",
+                    "description": "Optional destination for the generated MP3 file (defaults to sourceDir)"
+                },
+                "podcastName": {
+                    "type": "string",
+                    "description": "Name for the notebook and podcast (e.g., 'Serbian Immersion')"
+                },
+                "force": {
+                    "type": "boolean",
+                    "description": "Force regeneration if file already exists"
+                }
+            },
+            "required": [
+                "sourceDir"
+            ]
+        }
+    }
+]

@@ -651,3 +651,145 @@ tr:hover td {
         margin-top: 8rem;
     }
 }
+
+/* VOCABULARY GRID LAYOUT */
+.vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.vocab-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.vocab-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.vocab-card h3 {
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: var(--text-main);
+    z-index: 2;
+}
+
+.vocab-card .subtitle {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    letter-spacing: 0.05rem;
+    margin-top: -1rem;
+    z-index: 2;
+}
+
+/* Specific Card Glows */
+.vocab-card.family:hover { border-color: #ff9a9e; box-shadow: 0 10px 30px -10px rgba(255, 154, 158, 0.2); }
+.vocab-card.health:hover { border-color: #a18cd1; box-shadow: 0 10px 30px -10px rgba(161, 140, 209, 0.2); }
+.vocab-card.professions:hover { border-color: #84fab0; box-shadow: 0 10px 30px -10px rgba(132, 250, 176, 0.2); }
+.vocab-card.basics:hover { border-color: #fbc2eb; box-shadow: 0 10px 30px -10px rgba(251, 194, 235, 0.2); }
+
+.vocab-icon {
+    width: 60px;
+    height: 60px;
+    stroke: var(--text-dim);
+    stroke-width: 1.5;
+    fill: none;
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+
+.vocab-card:hover .vocab-icon {
+    stroke: var(--text-main);
+    transform: scale(1.1);
+}
+
+.vocab-card.family:hover .vocab-icon { stroke: #ff9a9e; }
+.vocab-card.health:hover .vocab-icon { stroke: #a18cd1; }
+.vocab-card.professions:hover .vocab-icon { stroke: #84fab0; }
+.vocab-card.basics:hover .vocab-icon { stroke: #fbc2eb; }
+
+/* Expanded State for Vocabulary */
+.vocab-card.expanded {
+    grid-column: 1 / -1;
+    min-height: auto;
+    cursor: default;
+    background: rgba(10, 10, 11, 0.95);
+    border-color: var(--primary-accent);
+    align-items: flex-start;
+    text-align: left;
+    padding: 3rem;
+    z-index: 50;
+}
+
+.vocab-content {
+    display: none;
+    width: 100%;
+    margin-top: 2rem;
+    animation: fadeIn 0.5s ease;
+    text-align: left;
+}
+
+.vocab-card.expanded .vocab-content {
+    display: block;
+}
+
+.vocab-card.expanded .vocab-icon {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    opacity: 0.5;
+}
+
+/* LIST STYLING IN VOCAB */
+.word-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.word-item {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.word-serbian {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.word-english {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    margin-top: 0.2rem;
+}
+
+@media (max-width: 768px) {
+    .vocab-grid {
+        grid-template-columns: 1fr;
+    }
+}

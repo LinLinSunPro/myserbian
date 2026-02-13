@@ -218,8 +218,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Slogans only change when the user interacts with the page (Zen Law)
     document.addEventListener('click', (e) => {
         // Only trigger if we're not clicking the interactive reveal box or icons (which have their own logic)
-        if (!e.target.closest('.zen-icons-row')) {
+        if (!e.target.closest('.zen-icons-row') && !e.target.closest('.vocab-card')) {
             triggerVibeChange();
         }
     });
 });
+
+function toggleVocabCard(card) {
+    // If already expanded, close it
+    if (card.classList.contains('expanded')) {
+        card.classList.remove('expanded');
+        return;
+    }
+
+    // Close any other expanded cards first
+    document.querySelectorAll('.vocab-card.expanded').forEach(c => c.classList.remove('expanded'));
+
+    // Open this one
+    card.classList.add('expanded');
+}

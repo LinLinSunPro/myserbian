@@ -44,10 +44,99 @@
 
         <nav class="tabs-container">
             <div class="tab-item active" onclick="switchCategory('grammar', event)">Gramatika</div>
+            <div class="tab-item" onclick="switchCategory('vocab', event)">Vokabular</div>
             <div class="tab-item" onclick="switchCategory('homework', event)">Domaći zadatak</div>
         </nav>
 
         <main>
+            <!-- CATEGORY: VOCABULARY -->
+            <div id="vocab-cat" class="category-section">
+                <div class="vocab-grid">
+                    
+                    <!-- FAMILY CARD -->
+                    <div class="vocab-card family" onclick="toggleVocabCard(this)">
+                        <svg class="vocab-icon" viewBox="0 0 50 50">
+                            <!-- Stick Figures Holding Hands -->
+                            <circle cx="15" cy="15" r="5" />
+                            <circle cx="35" cy="15" r="5" />
+                            <path d="M15 20 L15 35 M35 20 L35 35 M15 35 L10 45 M15 35 L20 45 M35 35 L30 45 M35 35 L40 45 M15 25 L35 25" stroke-linecap="round" />
+                        </svg>
+                        <h3>Porodica</h3>
+                        <div class="subtitle">Family</div>
+                        <div class="vocab-content">
+                            <div class="word-list">
+                                <div class="word-item"><span class="word-serbian">Mama</span><span class="word-english">Mom</span></div>
+                                <div class="word-item"><span class="word-serbian">Tata</span><span class="word-english">Dad</span></div>
+                                <div class="word-item"><span class="word-serbian">Brat</span><span class="word-english">Brother</span></div>
+                                <div class="word-item"><span class="word-serbian">Sestra</span><span class="word-english">Sister</span></div>
+                                <div class="word-item"><span class="word-serbian">Sin</span><span class="word-english">Son</span></div>
+                                <div class="word-item"><span class="word-serbian">Ćerka</span><span class="word-english">Daughter</span></div>
+                                <div class="word-item"><span class="word-serbian">Muž / Žena</span><span class="word-english">Husband / Wife</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HEALTH CARD -->
+                    <div class="vocab-card health" onclick="toggleVocabCard(this)">
+                        <svg class="vocab-icon" viewBox="0 0 50 50">
+                            <!-- Simple Pill -->
+                            <rect x="10" y="20" width="30" height="10" rx="5" ry="5" />
+                            <line x1="25" y1="20" x2="25" y2="30" />
+                        </svg>
+                        <h3>Zdravlje</h3>
+                        <div class="subtitle">Health</div>
+                        <div class="vocab-content">
+                            <div class="word-list">
+                                <div class="word-item"><span class="word-serbian">Bolovi u mišićima</span><span class="word-english">Muscle aches</span></div>
+                                <div class="word-item"><span class="word-serbian">Curenje nosa</span><span class="word-english">Runny nose</span></div>
+                                <div class="word-item"><span class="word-serbian">Upala grla</span><span class="word-english">Sore throat</span></div>
+                                <div class="word-item"><span class="word-serbian">Suvi kašalj</span><span class="word-english">Dry cough</span></div>
+                                <div class="word-item"><span class="word-serbian">Povraćanje</span><span class="word-english">Vomiting</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROFESSIONS CARD -->
+                    <div class="vocab-card professions" onclick="toggleVocabCard(this)">
+                        <svg class="vocab-icon" viewBox="0 0 50 50">
+                            <!-- Simple Hammer -->
+                            <rect x="20" y="10" width="10" height="20" /> <!-- Head -->
+                            <rect x="23" y="30" width="4" height="15" /> <!-- Handle -->
+                        </svg>
+                        <h3>Posao</h3>
+                        <div class="subtitle">Work & Countries</div>
+                        <div class="vocab-content">
+                            <div class="word-list">
+                                <div class="word-item"><span class="word-serbian">Lekar</span><span class="word-english">Doctor</span></div>
+                                <div class="word-item"><span class="word-serbian">Profesor</span><span class="word-english">Professor</span></div>
+                                <div class="word-item"><span class="word-serbian">Kuvar</span><span class="word-english">Chef</span></div>
+                                <div class="word-item"><span class="word-serbian">Srbija / Srbin</span><span class="word-english">Serbia / Serbian</span></div>
+                                <div class="word-item"><span class="word-serbian">Nemačka / Nemac</span><span class="word-english">Germany / German</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BASICS CARD -->
+                    <div class="vocab-card basics" onclick="toggleVocabCard(this)">
+                        <svg class="vocab-icon" viewBox="0 0 50 50">
+                            <!-- Speech Bubble -->
+                            <path d="M10 15 Q10 5 25 5 Q40 5 40 15 Q40 25 25 25 Q20 25 15 30 L15 25 Q10 25 10 15 Z" />
+                        </svg>
+                        <h3>Osnove</h3>
+                        <div class="subtitle">Basics</div>
+                        <div class="vocab-content">
+                            <div class="word-list">
+                                <div class="word-item"><span class="word-serbian">Dobar dan</span><span class="word-english">Good day</span></div>
+                                <div class="word-item"><span class="word-serbian">Hvala</span><span class="word-english">Thank you</span></div>
+                                <div class="word-item"><span class="word-serbian">Kako si?</span><span class="word-english">How are you? (Inf)</span></div>
+                                <div class="word-item"><span class="word-serbian">Vidimo se</span><span class="word-english">See you</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
             <!-- CATEGORY: GRAMMAR -->
             <div id="grammar-cat" class="category-section active">
                 <div class="sub-tabs-container">
