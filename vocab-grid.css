@@ -1,0 +1,121 @@
+/* COMPACT VOCABULARY GRID */
+.vocab-grid-compact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 0 0 2rem 0;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.vocab-compact-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    min-width: 200px;
+}
+
+.vocab-compact-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.vocab-compact-card.active {
+    background: rgba(10, 10, 11, 0.8);
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 20px -5px rgba(0, 210, 255, 0.2);
+}
+
+.vocab-icon-small {
+    width: 32px;
+    height: 32px;
+    stroke: var(--text-dim);
+    stroke-width: 2;
+    fill: none;
+    transition: stroke 0.3s ease;
+}
+
+.vocab-compact-card:hover .vocab-icon-small,
+.vocab-compact-card.active .vocab-icon-small {
+    stroke: var(--primary-accent);
+}
+
+.card-text {
+    text-align: left;
+}
+
+.card-text h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: var(--text-main);
+    letter-spacing: 0.05rem;
+    text-align: left;
+}
+
+.card-text .subtitle {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    margin: 0;
+    opacity: 0.7;
+}
+
+/* ACTIVE DISPLAY AREA */
+.vocab-display-area {
+    margin-top: 3rem;
+    width: 100%;
+    min-height: 200px;
+    animation: fadeIn 0.5s ease;
+}
+
+.placeholder-text {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    opacity: 0.5;
+    letter-spacing: 0.1rem;
+    margin-top: 4rem;
+}
+
+/* Make word lists look good in the new container */
+.vocab-display-area .word-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.vocab-display-area .word-item {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.vocab-display-area .word-item:hover {
+    transform: translateX(5px);
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.vocab-display-area .word-serbian {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.vocab-display-area .word-english {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    font-weight: 300;
+}

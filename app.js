@@ -224,16 +224,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-function toggleVocabCard(card) {
-    // If already expanded, close it
-    if (card.classList.contains('expanded')) {
-        card.classList.remove('expanded');
-        return;
+function selectVocabTopic(topicId, cardElement) {
+    // 1. Handle Visual Selection of Card
+    // Remove active class from all text-cards
+    document.querySelectorAll('.vocab-compact-card').forEach(c => c.classList.remove('active'));
+    // Add to clicked
+    cardElement.classList.add('active');
+
+    // 2. Handle Content Injection
+    const displayArea = document.getElementById('vocab-active-display');
+    const sourceContent = document.getElementById('vocab-content-' + topicId);
+
+    if (displayArea && sourceContent) {
+        // Fade out slightly before swapping (quick transition)
+        displayArea.style.opacity = '0';
+
+        setTimeout(() => {
+            displayArea.innerHTML = sourceContent.innerHTML;
+            displayArea.style.opacity = '1';
+        }, 200);
     }
-
-    // Close any other expanded cards first
-    document.querySelectorAll('.vocab-card.expanded').forEach(c => c.classList.remove('expanded'));
-
-    // Open this one
-    card.classList.add('expanded');
 }
